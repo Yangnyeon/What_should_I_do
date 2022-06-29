@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.What_should_I_order">
         <activity
+            android:name=".Worldcup.Worldcup"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

@@ -4,6 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/user/AndroidStudioProjects/What_should_I_order/app/src/main/res/layout/activity_main.xml" value="0.17980072463768115" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/What_should_I_order/app/src/main/res/layout/activity_worldcup.xml" value="0.176" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/What_should_I_order/app/src/main/res/layout/fragment_calendar.xml" value="0.23097826086956522" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/What_should_I_order/app/src/main/res/layout/fragment_calendar2.xml" value="0.23097826086956522" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/What_should_I_order/app/src/main/res/layout/fragment_main__screen.xml" value="0.23097826086956522" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/What_should_I_order/app/src/main/res/layout/fragment_setting.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/What_should_I_order/app/src/main/res/menu/bottom_menu_bar.xml" value="0.8964285714285715" />
       </map>
     </option>
   </component>
