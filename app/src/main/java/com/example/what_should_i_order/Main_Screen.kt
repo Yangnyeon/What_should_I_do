@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.cardview.widget.CardView
 import com.example.what_should_i_order.Worldcup.Worldcup
 
 
@@ -21,10 +22,16 @@ class Main_Screen : Fragment() {
         var v = inflater.inflate(R.layout.fragment_main__screen, container, false)
 
 
-        var gogo = v.findViewById<Button>(R.id.gogo)
+        var World_gogo = v.findViewById<CardView>(R.id.World_gogo)
 
-        gogo.setOnClickListener {
+        var Select_gogo = v.findViewById<CardView>(R.id.Select_gogo)
+
+        World_gogo.setOnClickListener {
             startActivity(Intent(requireActivity(), Worldcup::class.java))
+        }
+
+        Select_gogo.setOnClickListener {
+            startActivity(Intent(requireActivity(), Select_Food::class.java))
         }
 
         return v

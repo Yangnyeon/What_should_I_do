@@ -46,9 +46,19 @@ class Worldcup : AppCompatActivity() {
             finish()
         }
 
-        for (i in 0..31) {
+        /*for (i in 0..31) {
             food_1Round.add(i.toString())
-        }
+        }*/
+
+        food_1Round.add("곱창")
+        food_1Round.add("보쌈")
+        food_1Round.add("짜장면")
+        food_1Round.add("짬뽕")
+        food_1Round.add("엽떡")
+
+        for (i in 0..26) {
+         food_1Round.add(i.toString())
+     }
 
         food_1Round.shuffle()
 
