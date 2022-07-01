@@ -65,6 +65,13 @@
             android:id="@+id/left_card"
             >
 
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="300sp"
+                    android:scaleType="fitXY"
+                    android:id="@+id/left_iamge"
+                    ></ImageView>
+
 
             <TextView
                 android:layout_width="wrap_content"
@@ -87,6 +94,14 @@
             app:cardCornerRadius="16sp"
             android:id="@+id/right_card"
             >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300sp"
+                android:scaleType="fitXY"
+                android:id="@+id/right_iamge"
+                ></ImageView>
+
 
 
             <TextView
