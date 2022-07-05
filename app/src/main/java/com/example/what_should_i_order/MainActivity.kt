@@ -2,7 +2,7 @@ package com.example.what_should_i_order
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.what_should_i_order.Calendar.Calendar
+import com.example.what_should_i_order.Community.Community
 import com.example.what_should_i_order.Setting.Setting
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
                         supportFragmentManager.beginTransaction().replace(R.id.container, MainFragment1).commit()
                     }
                     R.id.second -> {
-                        val MainFragment2 = Calendar()
+                        val MainFragment2 = Community()
                         supportFragmentManager.beginTransaction().replace(R.id.container, MainFragment2).commit()
                     }
                     R.id.third -> {
