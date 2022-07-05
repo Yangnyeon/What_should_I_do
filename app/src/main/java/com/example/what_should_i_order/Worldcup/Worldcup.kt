@@ -93,7 +93,7 @@ class Worldcup : AppCompatActivity() {
             add(Food_Data(Food_Image = R.drawable.tteokbokki,Food_text = "닭발"))
             add(Food_Data(Food_Image = R.drawable.ramen,Food_text = "삼겹살"))
             add(Food_Data(Food_Image = R.drawable.tteokbokki,Food_text = "크로플"))
-            add(Food_Data(Food_Image = R.drawable.ramen,Food_text = "스테이크"))
+            add(Food_Data(Food_Image = R.drawable.ramen,Food_text = "탕수육"))
         }
 
         food_1Round.shuffle()
