@@ -184,7 +184,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10sp"
                         android:fontFamily="@font/jua"
-                        android:text="디저트\n\n고르러 가기"
+                        android:text="디저트\n\n고르러 가기\n  (준비중)"
                         android:textColor="#000000"
                         android:textSize="30sp"></TextView>
 

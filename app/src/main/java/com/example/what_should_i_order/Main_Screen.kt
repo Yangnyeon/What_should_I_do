@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.cardview.widget.CardView
-import com.example.what_should_i_order.Favorites.Favorit_Food
+
 import com.example.what_should_i_order.Worldcup.Worldcup
 
 
@@ -50,7 +50,7 @@ class Main_Screen : Fragment() {
         }
 
         Ranking_gogo.setOnClickListener {
-            startActivity(Intent(requireActivity(), Favorit_Food::class.java))
+
         }
 
 

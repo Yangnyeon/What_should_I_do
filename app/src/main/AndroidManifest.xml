@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.What_should_I_order">
         <activity
+            android:name=".Community.Comunity_Write"
+            android:exported="true" />
+        <activity
             android:name=".Favorites.Favorit_Food"
             android:exported="true" />
         <activity

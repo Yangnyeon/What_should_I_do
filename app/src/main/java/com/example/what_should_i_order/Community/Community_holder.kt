@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
@@ -16,6 +17,8 @@ import com.example.what_should_i_order.Community.Comment.Comment_ListLayout
 import com.example.what_should_i_order.R
 import com.example.what_should_i_order.Setting.Setting
 import com.example.what_should_i_order.databinding.ActivityCommunityHolderBinding
+import com.google.android.gms.tasks.OnFailureListener
+import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import kotlinx.android.synthetic.main.activity_community_holder.*
@@ -31,6 +34,8 @@ class Community_holder : AppCompatActivity() {
     val itemList2 = arrayListOf<Comment_ListLayout>()
 
     var adapter = Comment_ListAdapter(itemList2, this)
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,11 +63,13 @@ class Community_holder : AppCompatActivity() {
         val content = intent.getStringExtra("board_content")
         val holder_doc = intent.getStringExtra("board_doc")
         val password = intent.getStringExtra("board_password")
-        val like_count = intent.getSerializableExtra("board_liked")
+        val like_count = intent.getStringExtra("board_liked")
+        val nickname = intent.getStringExtra("board_Nickname")
 
         board_title.setText(title)
         board_date.setText(content)
         board_content.setText(date)
+        board_nickname.text = nickname.toString()
 
 
 
@@ -146,6 +153,63 @@ class Community_holder : AppCompatActivity() {
 
         }
 
+        content_delete.setOnClickListener {
+
+            val builder = AlertDialog.Builder(this@Community_holder)
+
+
+            // 대화상자에 텍스트 입력 필드 추가, 대충 만들었음
+            val tvName = TextView(this@Community_holder)
+            tvName.text = "\n비밀번호 입력\n"
+
+            val password_edit = EditText(this@Community_holder)
+            password_edit.isSingleLine = true
+
+            val mLayout = LinearLayout(this@Community_holder)
+            mLayout.orientation = LinearLayout.VERTICAL
+            mLayout.setPadding(16)
+            mLayout.addView(tvName)
+            mLayout.addView(password_edit)
+
+            builder.setView(mLayout)
+
+            builder.setTitle("게시물 삭제")
+            builder.setPositiveButton("삭제") { dialog, which ->
+                // EditText에서 문자열을 가져와 hashMap으로 만듦
+
+                if(password_edit.text.toString().equals(password.toString())) {
+                    db.collection("Contacts")
+                        .document(holder_doc.toString())
+                        .delete()
+                        .addOnSuccessListener {
+                            // 성공할 경우
+                            Toast.makeText(this, "성공적으로 삭제되었습니다.", Toast.LENGTH_SHORT).show()
+
+                            finish()
+                            //go_board2.putExtra("board_doc", it.toString())
+                            // startActivity(go_board2)
+                        }
+                        .addOnFailureListener { exception ->
+                            // 실패할 경우
+
+                            Log.w("MainActivity", "Error getting documents: $exception")
+                        }
+                } else {
+                    Toast.makeText(this, "비밀번호가 일치하지않습니다.", Toast.LENGTH_SHORT).show()
+                }
+
+
+
+            }
+            builder.setNegativeButton("취소") { dialog, which ->
+
+            }
+            builder.show()
+
+
+
+        }
+
 
 
     }
@@ -177,5 +241,7 @@ class Community_holder : AppCompatActivity() {
                 Log.w("TAG", "Error getting documents: $exception")
             }
     }
+
+
 
 }

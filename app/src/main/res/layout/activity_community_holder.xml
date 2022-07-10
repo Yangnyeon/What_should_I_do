@@ -146,8 +146,9 @@
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentBottom="true"
                         android:layout_margin="16sp"
-                        android:visibility="invisible"
+                        android:visibility="visible"
                         android:id="@+id/content_delete"
+                        android:layout_gravity="end|bottom"
                         ></ImageView>
 
                 </FrameLayout>
@@ -187,6 +188,7 @@
             android:layout_weight="3"
             android:layout_margin="10dp"
             android:hint="댓글 입력"
+            android:textColor="#FFFFFF"
             android:id="@+id/comment_edit"/>
 
         <Button

@@ -1,5 +1,6 @@
 package com.example.what_should_i_order.Community
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -14,6 +15,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.view.setPadding
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.what_should_i_order.R
+import com.example.what_should_i_order.Select_Food
 import com.example.what_should_i_order.databinding.FragmentCalendarBinding
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
@@ -29,6 +31,8 @@ class Community : Fragment() {
     val itemList = arrayListOf<ListLayout>()    // 리스트 아이템 배열
 
     val ref : CollectionReference = db.collection("Contacts")
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -66,6 +70,7 @@ class Community : Fragment() {
                 Log.w("MainActivity", "Error getting documents: $exception")
             }
 
+
         binding.btnRead.setOnClickListener {
             db.collection("Contacts")   // 작업할 컬렉션
                 .orderBy("com_date", Query.Direction.DESCENDING)
@@ -87,7 +92,7 @@ class Community : Fragment() {
         }
 
 
-        binding.btnWrite.setOnClickListener {
+       /* binding.btnWrite.setOnClickListener {
             // 대화상자 생성
             val builder = AlertDialog.Builder(requireActivity())
 
@@ -173,8 +178,38 @@ class Community : Fragment() {
             builder.show()
         }
 
+        */
+        binding.btnWrite.setOnClickListener {
+            startActivity(Intent(requireActivity(), Comunity_Write::class.java))
+        }
 
         return binding.root
+    }
+
+    fun update() {
+        val adapter123 = ListAdapter(itemList, requireActivity())   // 리사이클러 뷰 어댑터
+
+        db.collection("Contacts") // 작업할 컬렉션
+            .orderBy("com_date", Query.Direction.DESCENDING)
+            .get() // 문서 가져오기
+            .addOnSuccessListener { result ->
+                // 성공할 경우
+                itemList.clear()
+                for (document in result) {  // 가져온 문서들은 result에 들어감
+                    val item =
+                        ListLayout(document["name"] as String, document["number"] as String,
+                            document["com_date"] as String?, document["password"] as String,
+                            document["doc"] as String, document["nickname"] as String, document["liked"] as String)
+                    itemList.add(item)
+                }
+                adapter123.notifyDataSetChanged()// 리사이클러 뷰 갱신
+            }
+            .addOnFailureListener { exception ->
+                // 실패할 경우
+                Log.w("MainActivity", "Error getting documents: $exception")
+            }
+
+
     }
 
 }

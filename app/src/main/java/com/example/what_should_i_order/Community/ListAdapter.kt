@@ -57,6 +57,9 @@ class ListAdapter(val itemList: ArrayList<ListLayout>,val context: Context): Rec
             var content = itemList[position].com_date
             var doc = itemList[position].doc
             var liked = itemList[position].liked
+            var nickname = itemList[position].Nickname
+            var password = itemList[position].password
+
 
             val go_board = Intent(context, Community_holder::class.java)
             go_board.putExtra("board_title", title)
@@ -64,6 +67,8 @@ class ListAdapter(val itemList: ArrayList<ListLayout>,val context: Context): Rec
             go_board.putExtra("board_content", content)
             go_board.putExtra("board_doc", doc)
             go_board.putExtra("board_liked", liked)
+            go_board.putExtra("board_Nickname", nickname)
+            go_board.putExtra("board_password", password)
 
             context.startActivity(go_board)
         }
