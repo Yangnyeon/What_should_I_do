@@ -97,35 +97,46 @@
                     android:fontFamily="@font/jua"
                     android:textStyle="bold"></TextView>
 
-                <RelativeLayout
+                <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     >
 
                     <ImageView
-                        android:id="@+id/thumb_up_image"
+                        android:id="@+id/liked"
                         android:layout_width="30sp"
                         android:layout_height="30sp"
-                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="bottom"
                         android:layout_margin="16sp"
-                        android:visibility="invisible"
-                        android:src="@drawable/ic_baseline_thumb_up_24"></ImageView>
+                        android:src="@drawable/ic_baseline_thumb_up_24"
+                        android:visibility="invisible">
+                    </ImageView>
+
+
+                    <ImageView
+                        android:id="@+id/notliked"
+                        android:layout_width="30sp"
+                        android:layout_height="30sp"
+                        android:layout_gravity="bottom"
+                        android:layout_margin="16sp"
+                        android:src="@drawable/ic_baseline_thumb_up_off_alt_24"
+                        android:visibility="visible">
+                    </ImageView>
 
 
                     <TextView
+                        android:id="@+id/likes"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="64sp"
+                        android:layout_marginBottom="16sp"
+                        android:fontFamily="@font/jua"
                         android:text="0"
-                        android:layout_alignParentBottom="true"
                         android:textColor="#000000"
                         android:textSize="24sp"
-                        android:fontFamily="@font/jua"
                         android:textStyle="bold"
-                        android:id="@+id/thumb_up"
-                        android:layout_margin="16sp"
-                        android:visibility="invisible"
-                        android:layout_toRightOf="@id/thumb_up_image"
-                        ></TextView>
+                        android:visibility="visible"></TextView>
 
 
                     <ImageView
@@ -139,7 +150,7 @@
                         android:id="@+id/content_delete"
                         ></ImageView>
 
-                </RelativeLayout>
+                </FrameLayout>
 
 
 

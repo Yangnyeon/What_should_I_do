@@ -1,5 +1,6 @@
 package com.example.what_should_i_order.Community
 
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.what_should_i_order.Community.Comment.Comment_ListAdapter
 import com.example.what_should_i_order.Community.Comment.Comment_ListLayout
 import com.example.what_should_i_order.R
+import com.example.what_should_i_order.Setting.Setting
 import com.example.what_should_i_order.databinding.ActivityCommunityHolderBinding
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
@@ -56,10 +58,12 @@ class Community_holder : AppCompatActivity() {
         val content = intent.getStringExtra("board_content")
         val holder_doc = intent.getStringExtra("board_doc")
         val password = intent.getStringExtra("board_password")
+        val like_count = intent.getSerializableExtra("board_liked")
 
         board_title.setText(title)
         board_date.setText(content)
         board_content.setText(date)
+
 
 
         //댓글출력
@@ -94,7 +98,7 @@ class Community_holder : AppCompatActivity() {
 
             var comment_edit = comment_edit.text.toString()
 
-            val currentTime : Long = System.currentTimeMillis()
+            val currentTime: Long = System.currentTimeMillis()
             val simpleDate = SimpleDateFormat("yyyy-MM-dd k:mm:ss")
             val mDate: Date = Date(currentTime)
             val getTime = simpleDate.format(mDate)
@@ -128,6 +132,22 @@ class Community_holder : AppCompatActivity() {
                 }
 
         }
+
+        liked.setOnClickListener {
+            notliked.visibility = View.VISIBLE
+            liked.visibility = View.INVISIBLE
+
+
+        }
+
+        notliked.setOnClickListener {
+            notliked.visibility = View.INVISIBLE
+            liked.visibility = View.VISIBLE
+
+        }
+
+
+
     }
 
     fun update() {
@@ -157,4 +177,5 @@ class Community_holder : AppCompatActivity() {
                 Log.w("TAG", "Error getting documents: $exception")
             }
     }
+
 }

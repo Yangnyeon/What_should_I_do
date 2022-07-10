@@ -56,7 +56,7 @@ class Community : Fragment() {
                     val item =
                         ListLayout(document["name"] as String, document["number"] as String,
                             document["com_date"] as String?, document["password"] as String,
-                            document["doc"] as String, document["nickname"] as String)
+                            document["doc"] as String, document["nickname"] as String, document["liked"] as String)
                     itemList.add(item)
                 }
                 adapter123.notifyDataSetChanged()// 리사이클러 뷰 갱신
@@ -75,7 +75,7 @@ class Community : Fragment() {
                     itemList.clear()
                     for (document in result) {  // 가져온 문서들은 result에 들어감
                         val item =
-                            ListLayout(document["name"] as String, document["number"] as String, document["com_date"] as String?, document["password"] as String,document["doc"] as String, document["nickname"] as String)
+                            ListLayout(document["name"] as String, document["number"] as String, document["com_date"] as String?, document["password"] as String,document["doc"] as String, document["nickname"] as String, document["liked"] as String)
                         itemList.add(item)
                     }
                     adapter123.notifyDataSetChanged()  // 리사이클러 뷰 갱신
@@ -146,7 +146,8 @@ class Community : Fragment() {
                     "com_date" to getTime.toString(),
                     "password" to password.text.toString(),
                     "doc" to doc,
-                    "nickname" to Nickname_edit.text.toString()
+                    "nickname" to Nickname_edit.text.toString(),
+                    "liked" to 0.toString()
                 )
                 // Contacts 컬렉션에 data를 자동 이름으로 저장
                 db.collection("Contacts")

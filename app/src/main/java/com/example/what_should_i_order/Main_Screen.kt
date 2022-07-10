@@ -6,12 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.TextView
 import androidx.cardview.widget.CardView
-import com.example.what_should_i_order.Worldcup.Food_Data
+import com.example.what_should_i_order.Favorites.Favorit_Food
 import com.example.what_should_i_order.Worldcup.Worldcup
-import kotlin.random.Random
 
 
 class Main_Screen : Fragment() {
@@ -34,6 +32,8 @@ class Main_Screen : Fragment() {
 
         var Select_gogo = v.findViewById<CardView>(R.id.Select_gogo)
 
+        var Ranking_gogo = v.findViewById<CardView>(R.id.Ranking_gogo)
+
         val range = (0..3)
 
 
@@ -48,6 +48,12 @@ class Main_Screen : Fragment() {
         Select_gogo.setOnClickListener {
             startActivity(Intent(requireActivity(), Select_Food::class.java))
         }
+
+        Ranking_gogo.setOnClickListener {
+            startActivity(Intent(requireActivity(), Favorit_Food::class.java))
+        }
+
+
 
         return v
 
