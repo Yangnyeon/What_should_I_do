@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.What_should_I_order">
         <activity
+            android:name=".Food.Food_ramen"
+            android:exported="true" />
+        <activity
+            android:name=".Select_Food.Food_Ramen"
+            android:exported="true" />
+        <activity
+            android:name=".Select_Food.Ramen"
+            android:exported="true" />
+        <activity
             android:name=".Community.Comunity_Write"
             android:exported="true" />
         <activity

@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -62,38 +63,38 @@ class Worldcup : AppCompatActivity() {
         }*/
 
         food_1Round.apply {
-            add(Food_Data(Food_Image = R.drawable.tteokbokki,Food_text = "떡볶이"))
-            add(Food_Data(Food_Image = R.drawable.ramen,Food_text = "라면"))
-            add(Food_Data(Food_Image = R.drawable.tteokbokki,Food_text = "찜닭"))
-            add(Food_Data(Food_Image = R.drawable.ramen,Food_text = "닭볶음탕"))
-            add(Food_Data(Food_Image = R.drawable.tteokbokki,Food_text = "수육"))
-            add(Food_Data(Food_Image = R.drawable.ramen,Food_text = "아귀찜"))
-            add(Food_Data(Food_Image = R.drawable.tteokbokki,Food_text = "부대찌개"))
-            add(Food_Data(Food_Image = R.drawable.ramen,Food_text = "참치마요"))
-            add(Food_Data(Food_Image = R.drawable.tteokbokki,Food_text = "치킨마요"))
-            add(Food_Data(Food_Image = R.drawable.ramen,Food_text = "순댓국"))
-            add(Food_Data(Food_Image = R.drawable.tteokbokki,Food_text = "라면"))
-            add(Food_Data(Food_Image = R.drawable.ramen,Food_text = "크림 스파게티"))
-            add(Food_Data(Food_Image = R.drawable.tteokbokki,Food_text = "냉면"))
-            add(Food_Data(Food_Image = R.drawable.ramen,Food_text = "비빔 냉면"))
-            add(Food_Data(Food_Image = R.drawable.tteokbokki,Food_text = "콩국수"))
-            add(Food_Data(Food_Image = R.drawable.ramen,Food_text = "초밥"))
-            add(Food_Data(Food_Image = R.drawable.tteokbokki,Food_text = "짜장면"))
-            add(Food_Data(Food_Image = R.drawable.ramen,Food_text = "깐풍기"))
-            add(Food_Data(Food_Image = R.drawable.tteokbokki,Food_text = "햄버거"))
-            add(Food_Data(Food_Image = R.drawable.ramen,Food_text = "피자"))
-            add(Food_Data(Food_Image = R.drawable.tteokbokki,Food_text = "토스트"))
-            add(Food_Data(Food_Image = R.drawable.ramen,Food_text = "밥버거"))
-            add(Food_Data(Food_Image = R.drawable.tteokbokki,Food_text = "핫도그"))
-            add(Food_Data(Food_Image = R.drawable.ramen,Food_text = "갈비탕"))
-            add(Food_Data(Food_Image = R.drawable.tteokbokki,Food_text = "마라탕"))
-            add(Food_Data(Food_Image = R.drawable.ramen,Food_text = "짬뽕"))
-            add(Food_Data(Food_Image = R.drawable.tteokbokki,Food_text = "족발"))
-            add(Food_Data(Food_Image = R.drawable.ramen,Food_text = "삼계탕"))
-            add(Food_Data(Food_Image = R.drawable.tteokbokki,Food_text = "닭발"))
-            add(Food_Data(Food_Image = R.drawable.ramen,Food_text = "삼겹살"))
-            add(Food_Data(Food_Image = R.drawable.tteokbokki,Food_text = "크로플"))
-            add(Food_Data(Food_Image = R.drawable.ramen,Food_text = "탕수육"))
+            add(Food_Data(Food_Image = R.drawable.tteokbokki1,Food_text = "떡볶이"))
+            add(Food_Data(Food_Image = R.drawable.ramen1,Food_text = "라면"))
+            add(Food_Data(Food_Image = R.drawable.zzimchicken,Food_text = "찜닭"))
+            add(Food_Data(Food_Image = R.drawable.chickenboggum,Food_text = "닭볶음탕"))
+            add(Food_Data(Food_Image = R.drawable.watermeet,Food_text = "수육"))
+            add(Food_Data(Food_Image = R.drawable.gopchang,Food_text = "곱창"))
+            add(Food_Data(Food_Image = R.drawable.armystew,Food_text = "부대찌개"))
+            add(Food_Data(Food_Image = R.drawable.chicken,Food_text = "치킨"))
+            add(Food_Data(Food_Image = R.drawable.curry,Food_text = "카레"))
+            add(Food_Data(Food_Image = R.drawable.sundaegguk,Food_text = "순댓국"))
+            add(Food_Data(Food_Image = R.drawable.pasta,Food_text = "파스타"))
+            add(Food_Data(Food_Image = R.drawable.sphagetti,Food_text = "스파게티"))
+            add(Food_Data(Food_Image = R.drawable.icemen,Food_text = "냉면"))
+            add(Food_Data(Food_Image = R.drawable.crab,Food_text = "간장 게장"))
+            add(Food_Data(Food_Image = R.drawable.congguksu,Food_text = "콩국수"))
+            add(Food_Data(Food_Image = R.drawable.sushi,Food_text = "초밥"))
+            add(Food_Data(Food_Image = R.drawable.zzazang,Food_text = "짜장면"))
+            add(Food_Data(Food_Image = R.drawable.meetshshi,Food_text = "육회"))
+            add(Food_Data(Food_Image = R.drawable.hanburger,Food_text = "햄버거"))
+            add(Food_Data(Food_Image = R.drawable.pizza,Food_text = "피자"))
+            add(Food_Data(Food_Image = R.drawable.toast,Food_text = "토스트"))
+            add(Food_Data(Food_Image = R.drawable.staek,Food_text = "스테이크"))
+            add(Food_Data(Food_Image = R.drawable.hotdog,Food_text = "핫도그"))
+            add(Food_Data(Food_Image = R.drawable.mandu,Food_text = "만두"))
+            add(Food_Data(Food_Image = R.drawable.donggas,Food_text = "돈까스"))
+            add(Food_Data(Food_Image = R.drawable.zzambbong,Food_text = "짬뽕"))
+            add(Food_Data(Food_Image = R.drawable.zokbal1,Food_text = "족발"))
+            add(Food_Data(Food_Image = R.drawable.samgaetang,Food_text = "삼계탕"))
+            add(Food_Data(Food_Image = R.drawable.chickenfoog,Food_text = "닭발"))
+            add(Food_Data(Food_Image = R.drawable.sam,Food_text = "삼겹살"))
+            add(Food_Data(Food_Image = R.drawable.hotchicken,Food_text = "양념치킨"))
+            add(Food_Data(Food_Image = R.drawable.tang,Food_text = "탕수육"))
         }
 
         food_1Round.shuffle()
@@ -110,6 +111,10 @@ class Worldcup : AppCompatActivity() {
         left_card.setOnClickListener {
             count += 2
             game_count++
+            game.visibility = View.INVISIBLE
+            start.visibility = View.INVISIBLE
+            left_food.visibility = View.VISIBLE
+            right_food.visibility = View.VISIBLE
             if (game_count <= 16 && game_count >= 1) {
 
                 left_food.text = food_1Round[count].Food_text.toString()!!
@@ -121,7 +126,7 @@ class Worldcup : AppCompatActivity() {
                 game_count_text.text = "$game_count / 16"
 
                 food_2Round.apply {
-                    add(Food_Data(Food_Image = food_1Round[count].Food_Image, Food_text = left_food.text.toString()))
+                    add(Food_Data(Food_Image = food_1Round[count].Food_Image, Food_text = food_1Round[count].Food_text.toString()!!))
                 }
 
                 food_2Round.shuffle()
@@ -143,8 +148,8 @@ class Worldcup : AppCompatActivity() {
                 food_3Round.apply {
                     add(
                         Food_Data(
-                            Food_Image = food_1Round[count_2Round - 2].Food_Image,
-                            Food_text = left_food.text.toString()
+                            Food_Image = food_2Round[count_2Round - 2].Food_Image,
+                            Food_text = food_2Round[count_2Round - 2].Food_text.toString()!!
                         )
                     )
                 }
@@ -170,7 +175,7 @@ class Worldcup : AppCompatActivity() {
                     add(
                         Food_Data(
                             Food_Image = food_3Round[count_3Round - 2].Food_Image,
-                            Food_text = left_food.text.toString()
+                            Food_text = food_3Round[count_3Round - 2].Food_text.toString()!!
                         )
                     )
                 }
@@ -198,7 +203,7 @@ class Worldcup : AppCompatActivity() {
                     add(
                         Food_Data(
                             Food_Image = food_4Round[count_4Round - 2].Food_Image,
-                            Food_text = left_food.text.toString()
+                            Food_text = food_4Round[count_4Round - 2].Food_text.toString()!!
                         )
                     )
                 }
@@ -228,6 +233,10 @@ class Worldcup : AppCompatActivity() {
         right_card.setOnClickListener {
             count += 2
             game_count++
+            game.visibility = View.INVISIBLE
+            start.visibility = View.INVISIBLE
+            left_food.visibility = View.VISIBLE
+            right_food.visibility = View.VISIBLE
             if (game_count <= 16 && game_count >= 1) {
 
                 left_food.text = food_1Round[count].Food_text.toString()!!
@@ -239,7 +248,7 @@ class Worldcup : AppCompatActivity() {
                 game_count_text.text = "$game_count / 16"
 
                 food_2Round.apply {
-                    add(Food_Data(Food_Image = food_1Round[count].Food_Image, Food_text = right_food.text.toString()))
+                    add(Food_Data(Food_Image = food_1Round[count + 1].Food_Image, Food_text = food_1Round[count + 1].Food_text.toString()!!))
                 }
 
                 food_2Round.shuffle()
@@ -261,8 +270,8 @@ class Worldcup : AppCompatActivity() {
                 food_3Round.apply {
                     add(
                         Food_Data(
-                            Food_Image = food_1Round[count_2Round - 2].Food_Image,
-                            Food_text = right_food.text.toString()
+                            Food_Image = food_2Round[count_2Round - 1].Food_Image,
+                            Food_text = food_2Round[count_2Round - 1].Food_text.toString()!!
                         )
                     )
                 }
@@ -287,8 +296,8 @@ class Worldcup : AppCompatActivity() {
                 food_4Round.apply {
                     add(
                         Food_Data(
-                            Food_Image = food_3Round[count_3Round - 2].Food_Image,
-                            Food_text = right_food.text.toString()
+                            Food_Image = food_3Round[count_3Round - 1].Food_Image,
+                            Food_text = food_3Round[count_3Round - 1].Food_text.toString()!!
                         )
                     )
                 }
@@ -315,8 +324,8 @@ class Worldcup : AppCompatActivity() {
                 food_Final.apply {
                     add(
                         Food_Data(
-                            Food_Image = food_4Round[count_4Round - 2].Food_Image,
-                            Food_text = right_food.text.toString()
+                            Food_Image = food_4Round[count_4Round - 1].Food_Image,
+                            Food_text = food_4Round[count_4Round - 1].Food_text.toString()!!
                         )
                     )
                 }

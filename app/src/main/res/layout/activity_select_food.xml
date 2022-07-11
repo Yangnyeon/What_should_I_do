@@ -40,6 +40,7 @@
                     android:layout_height="200sp"
                     app:cardCornerRadius="16sp"
                     android:layout_weight="1"
+                    android:id="@+id/go_ramen"
                     >
 
                     <ImageView

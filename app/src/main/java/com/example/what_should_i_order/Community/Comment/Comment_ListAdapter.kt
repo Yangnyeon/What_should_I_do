@@ -70,8 +70,7 @@ class Comment_ListAdapter(val itemList: ArrayList<Comment_ListLayout>, val conte
                         }
                         .addOnFailureListener { exception ->
                             // 실패할 경우
-
-                            Log.w("MainActivity", "Error getting documents: $exception")
+                            Toast.makeText(context, "오류", Toast.LENGTH_SHORT).show()
                         }
                 } else {
                     Toast.makeText(context, "비밀번호가 일치하지않습니다.", Toast.LENGTH_SHORT).show()

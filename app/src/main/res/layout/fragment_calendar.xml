@@ -8,32 +8,22 @@
     android:background="@drawable/back_ground2">
 
 
-    <ImageView
-        android:id="@+id/community_back"
-        android:layout_width="60sp"
-        android:layout_height="60sp"
-        android:layout_marginTop="10sp"
-        android:src="@drawable/ic_baseline_keyboard_arrow_left_24">
-    </ImageView>
-
-
     <TextView
         android:id="@+id/ha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16sp"
-        android:layout_marginTop="110sp"
+        android:layout_marginTop="30sp"
         android:fontFamily="@font/jua"
         android:text="자유 게시판"
         android:textColor="#FFFFFF"
-        android:textSize="40sp">
-    </TextView>
+        android:textSize="40sp"></TextView>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16sp"
-        android:layout_marginTop="180sp"
+        android:layout_marginTop="100sp"
         android:fontFamily="@font/jua"
         android:text="나만의 영어 단어 어플 게시판에서 \n\n 서로의 의견들을공유해보세요!"
         android:textColor="#FFEB3B"
@@ -44,7 +34,7 @@
         android:id="@+id/rv_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="250sp" />
+        android:layout_marginTop="180sp" />
 
     <Button
         android:id="@+id/btn_read"
