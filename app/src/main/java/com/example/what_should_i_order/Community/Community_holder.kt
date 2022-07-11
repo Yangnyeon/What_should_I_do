@@ -1,5 +1,6 @@
 package com.example.what_should_i_order.Community
 
+import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -71,6 +72,10 @@ class Community_holder : AppCompatActivity() {
         board_content.setText(date)
         board_nickname.text = nickname.toString()
 
+        val go_comment_delelte = Intent(this@Community_holder, Community_holder::class.java)
+        go_comment_delelte.putExtra("board_doc", holder_doc)
+
+
 
 
         //댓글출력
@@ -87,7 +92,9 @@ class Community_holder : AppCompatActivity() {
                         Comment_ListLayout(
                             document["Comment"] as String,
                             document["Date"] as String,
-                            document["Doc"] as String)
+                            document["Doc"] as String,
+                            document["comment_password"] as String,
+                            document["content_doc"] as String)
                     itemList2.add(item2)
                 }
                 adapter.notifyDataSetChanged()// 리사이클러 뷰 갱신
@@ -103,40 +110,74 @@ class Community_holder : AppCompatActivity() {
 
         commnet_button.setOnClickListener {
 
-            var comment_edit = comment_edit.text.toString()
-
-            val currentTime: Long = System.currentTimeMillis()
-            val simpleDate = SimpleDateFormat("yyyy-MM-dd k:mm:ss")
-            val mDate: Date = Date(currentTime)
-            val getTime = simpleDate.format(mDate)
-
-            val doc = UUID.randomUUID().toString()
+            val comment_builder = AlertDialog.Builder(this@Community_holder)
 
 
-            val data = hashMapOf(
-                "Comment" to comment_edit,
-                "Date" to getTime.toString(),
-                "Doc" to doc
-            )
+            // 대화상자에 텍스트 입력 필드 추가, 대충 만들었음
+            val tvName = TextView(this@Community_holder)
+            tvName.text = "\n비밀번호 입력\n"
 
-            db.collection("Contacts")
-                .document(holder_doc.toString())
-                .collection("Comment")
-                .document(doc.toString())
-                .set(data)
-                .addOnSuccessListener {
-                    // 성공할 경우
-                    Toast.makeText(this, "데이터가 추가되었습니다", Toast.LENGTH_SHORT).show()
+            val password_edit = EditText(this@Community_holder)
+            password_edit.isSingleLine = true
 
-                    update()
-                    //go_board2.putExtra("board_doc", it.toString())
-                    // startActivity(go_board2)
-                }
-                .addOnFailureListener { exception ->
-                    // 실패할 경우
+            val mLayout = LinearLayout(this@Community_holder)
+            mLayout.orientation = LinearLayout.VERTICAL
+            mLayout.setPadding(16)
+            mLayout.addView(tvName)
+            mLayout.addView(password_edit)
 
-                    Log.w("MainActivity", "Error getting documents: $exception")
-                }
+            comment_builder.setView(mLayout)
+
+            comment_builder.setTitle("댓글 비밀번호 입력")
+            comment_builder.setPositiveButton("확인") { dialog, which ->
+                // EditText에서 문자열을 가져와 hashMap으로 만듦
+                var comment_edit = comment_edit.text.toString()
+
+                val currentTime: Long = System.currentTimeMillis()
+                val simpleDate = SimpleDateFormat("yyyy-MM-dd k:mm:ss")
+                val mDate: Date = Date(currentTime)
+                val getTime = simpleDate.format(mDate)
+                val content_doc = holder_doc.toString()
+
+                val doc = UUID.randomUUID().toString()
+
+
+                val data = hashMapOf(
+                    "Comment" to comment_edit,
+                    "Date" to getTime.toString(),
+                    "Doc" to doc,
+                    "comment_password" to password_edit.text.toString(),
+                    "content_doc" to content_doc
+                )
+
+                db.collection("Contacts")
+                    .document(holder_doc.toString())
+                    .collection("Comment")
+                    .document(doc.toString())
+                    .set(data)
+                    .addOnSuccessListener {
+                        // 성공할 경우
+                        Toast.makeText(this, "데이터가 추가되었습니다", Toast.LENGTH_SHORT).show()
+
+                        update()
+                        //go_board2.putExtra("board_doc", it.toString())
+                        // startActivity(go_board2)
+                    }
+                    .addOnFailureListener { exception ->
+                        // 실패할 경우
+
+                        Log.w("MainActivity", "Error getting documents: $exception")
+                    }
+
+            }
+            comment_builder.setNegativeButton("취소") { dialog, which ->
+
+            }
+            comment_builder.show()
+
+
+
+
 
         }
 
@@ -231,7 +272,9 @@ class Community_holder : AppCompatActivity() {
                         Comment_ListLayout(
                             document["Comment"] as String,
                             document["Date"] as String,
-                            document["Doc"] as String)
+                            document["Doc"] as String,
+                            document["comment_password"] as String,
+                            document["content_doc"] as String)
                     itemList2.add(item2)
                 }
                 adapter.notifyDataSetChanged()// 리사이클러 뷰 갱신

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/back_ground2">
+    >
 
 
     <ImageView
@@ -167,7 +167,7 @@
                     android:id="@+id/recycler_view_community_comment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="420sp"></androidx.recyclerview.widget.RecyclerView>
+                    android:layout_marginTop="410sp"></androidx.recyclerview.widget.RecyclerView>
 
             </RelativeLayout>
 
@@ -188,7 +188,6 @@
             android:layout_weight="3"
             android:layout_margin="10dp"
             android:hint="댓글 입력"
-            android:textColor="#FFFFFF"
             android:id="@+id/comment_edit"/>
 
         <Button
