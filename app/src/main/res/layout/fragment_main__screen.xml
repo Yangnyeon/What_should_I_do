@@ -4,24 +4,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Main_Screen"
     android:orientation="vertical"
     android:background="@drawable/back_ground2"
     >
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16sp"
+                android:layout_marginTop="30sp"
                 android:fontFamily="@font/jua"
                 android:gravity="center"
                 android:text="배달 머 시키지?!"
@@ -33,179 +41,233 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
                 >
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="150sp"
+                    android:fontFamily="@font/jua"
+                    android:gravity="left"
+                    android:text="오늘의 추천 음식은"
+                    android:layout_marginLeft="16sp"
+                    android:textColor="#9C27B0"
+                    android:textSize="36sp"
+                    android:textStyle="bold">
+                </TextView>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="16sp"
-                        android:fontFamily="@font/jua"
-                        android:gravity="left"
-                        android:text="오늘의 추천 음식은"
-                        android:textColor="#9C27B0"
-                        android:textSize="36sp"
-                        android:textStyle="bold">
-                    </TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="16sp"
-                        android:fontFamily="@font/jua"
-                        android:gravity="left"
-                        android:text="라면 입니다!"
-                        android:textColor="#E91E63"
-                        android:textSize="36sp"
-                        android:id="@+id/Today_food"
-                        android:textStyle="bold"></TextView>
-
-
-                </LinearLayout>
-
-
-
-                <ImageView
-                    android:layout_width="130sp"
-                    android:layout_height="130sp"
-                    android:src="@drawable/deliver"
-                    android:layout_marginTop="10sp"
-                    ></ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30sp"
+                    android:fontFamily="@font/jua"
+                    android:gravity="left"
+                    android:text="라면 입니다!"
+                    android:layout_marginLeft="16sp"
+                    android:textColor="#E91E63"
+                    android:textSize="36sp"
+                    android:id="@+id/Today_food"
+                    android:textStyle="bold">
+                </TextView>
 
 
             </LinearLayout>
 
 
 
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="280sp"
+                android:backgroundTint="#DFDEDE"
+                >
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/Select_gogo"
-                android:layout_width="330sp"
-                android:layout_height="230sp"
-                android:layout_gravity="center"
-                android:backgroundTint="#FF9800"
-                app:cardCornerRadius="28sp">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="175sp"
+                    android:layout_height="250sp"
+                    app:cardCornerRadius="16sp"
+                    android:layout_marginLeft="10sp"
+                    android:id="@+id/Select_gogo"
+                    android:layout_marginBottom="105sp"
+                    android:layout_marginTop="30sp"
+                    android:backgroundTint="#FF9800"
+                    >
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="250sp"
+                        android:orientation="vertical"
+                        >
 
+                        <ImageView
+                            android:layout_width="80sp"
+                            android:layout_height="80sp"
+                            android:src="@drawable/chiken2"
+                            android:layout_margin="28sp"
+                            ></ImageView>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10sp"
-                        android:fontFamily="@font/jua"
-                        android:text="배달음식\n\n고르러 가기"
-                        android:textColor="#000000"
-                        android:textSize="30sp"></TextView>
-
-
-                    <ImageView
-                        android:layout_width="150sp"
-                        android:layout_height="150sp"
-                        android:layout_marginLeft="30sp"
-                        android:src="@drawable/chiken2"></ImageView>
-
-
-                </LinearLayout>
-
-
-            </androidx.cardview.widget.CardView>
-
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/World_gogo"
-                android:layout_width="330sp"
-                android:layout_height="230sp"
-                android:layout_gravity="center"
-                android:layout_marginTop="30sp"
-                android:backgroundTint="#CDDC39"
-                app:cardCornerRadius="28sp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="배달음식 \n\n고르러 가기!"
+                            android:textSize="25sp"
+                            android:layout_marginLeft="20sp"
+                            android:textStyle="bold"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/jua"
+                            ></TextView>
 
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20sp"
-                        android:fontFamily="@font/jua"
-                        android:text="배달음식\n\n이상형 월드컵!"
-                        android:textColor="#000000"
-                        android:textSize="30sp"></TextView>
+                    </LinearLayout>
 
 
-                    <ImageView
-                        android:layout_width="150sp"
-                        android:layout_height="150sp"
-                        android:src="@drawable/world_cup_img"
 
-                        ></ImageView>
+                </androidx.cardview.widget.CardView>
 
+                <androidx.cardview.widget.CardView
+                    android:layout_width="175sp"
+                    android:layout_height="250sp"
+                    app:cardCornerRadius="16sp"
+                    android:id="@+id/World_gogo"
+                    android:layout_marginLeft="195sp"
+                    android:layout_marginBottom="105sp"
+                    android:layout_marginTop="80sp"
+                    android:backgroundTint="#CDDC39"
+                    >
 
-                </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="250sp"
+                        android:orientation="vertical"
+                        >
 
+                        <ImageView
+                            android:layout_width="80sp"
+                            android:layout_height="80sp"
+                            android:src="@drawable/world_cup_img"
+                            android:layout_margin="28sp"
+                            ></ImageView>
 
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="330sp"
-                android:layout_height="230sp"
-                android:layout_gravity="center"
-                android:layout_marginTop="30sp"
-                android:backgroundTint="#3F51B5"
-                app:cardCornerRadius="28sp"
-                android:id="@+id/Ranking_gogo">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10sp"
-                        android:fontFamily="@font/jua"
-                        android:text="디저트\n\n고르러 가기\n  (준비중)"
-                        android:textColor="#000000"
-                        android:textSize="30sp"></TextView>
-
-
-                    <ImageView
-                        android:layout_width="150sp"
-                        android:layout_height="150sp"
-                        android:layout_marginLeft="30sp"
-                        android:src="@drawable/dessert"></ImageView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="배달음식 \n\n이상형 월드컵!"
+                            android:textSize="25sp"
+                            android:layout_marginLeft="20sp"
+                            android:textStyle="bold"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/jua"
+                            ></TextView>
 
 
-                </LinearLayout>
+                    </LinearLayout>
 
 
-            </androidx.cardview.widget.CardView>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="175sp"
+                    android:layout_height="250sp"
+                    app:cardCornerRadius="16sp"
+                    android:id="@+id/gogo_community3"
+                    android:layout_marginLeft="10sp"
+                    android:layout_marginBottom="105sp"
+                    android:layout_marginTop="300sp"
+                    android:backgroundTint="#3F51B5"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="250sp"
+                        android:orientation="vertical"
+                        >
+
+                        <ImageView
+                            android:layout_width="80sp"
+                            android:layout_height="80sp"
+                            android:src="@drawable/dessert"
+                            android:layout_margin="28sp"
+                            ></ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="디저트 \n고르러가기!\n(준비중)"
+                            android:textSize="25sp"
+                            android:layout_marginLeft="20sp"
+                            android:textStyle="bold"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/jua"
+                            ></TextView>
 
 
-        </LinearLayout>
+                    </LinearLayout>
 
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="175sp"
+                    android:layout_height="250sp"
+                    app:cardCornerRadius="16sp"
+                    android:id="@+id/gogo_community4"
+                    android:layout_marginLeft="195sp"
+                    android:layout_marginBottom="105sp"
+                    android:layout_marginTop="350sp"
+                    android:backgroundTint="#9C27B0"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="250sp"
+                        android:orientation="vertical"
+                        >
+
+                        <ImageView
+                            android:layout_width="80sp"
+                            android:layout_height="80sp"
+                            android:src="@drawable/icecream"
+                            android:layout_margin="28sp"
+                            ></ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="어플 소개"
+                            android:textSize="25sp"
+                            android:layout_marginLeft="20sp"
+                            android:textStyle="bold"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/jua"
+                            ></TextView>
+
+
+                    </LinearLayout>
+
+
+
+                </androidx.cardview.widget.CardView>
+
+
+
+
+            </FrameLayout>
+
+
+
+
+        </FrameLayout>
 
     </ScrollView>
+
 
 
 </LinearLayout>

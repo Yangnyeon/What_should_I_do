@@ -27,10 +27,6 @@ class MainActivity : AppCompatActivity() {
                         val MainFragment2 = Community()
                         supportFragmentManager.beginTransaction().replace(R.id.container, MainFragment2).commit()
                     }
-                    R.id.third -> {
-                        val MainFragment3 = Setting()
-                        supportFragmentManager.beginTransaction().replace(R.id.container, MainFragment3).commit()
-                    }
                 }
                 true
             }
