@@ -4,11 +4,14 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:icon="@drawable/order_icon"
+        android:label="배달 머 시켜 먹을까?!"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.What_should_I_order">
+        <activity
+            android:name=".App_Introduce"
+            android:exported="true" />
         <activity
             android:name=".Food.Food_ramen"
             android:exported="true" />

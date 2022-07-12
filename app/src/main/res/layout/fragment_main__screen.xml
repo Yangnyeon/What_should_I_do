@@ -218,7 +218,7 @@
                     android:layout_width="175sp"
                     android:layout_height="250sp"
                     app:cardCornerRadius="16sp"
-                    android:id="@+id/gogo_community4"
+                    android:id="@+id/gogo_introduce"
                     android:layout_marginLeft="195sp"
                     android:layout_marginBottom="105sp"
                     android:layout_marginTop="350sp"

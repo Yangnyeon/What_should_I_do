@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".App_Introduce"
+    android:orientation="vertical"
+    android:background="@drawable/water_background"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="배달 머 시켜먹지 어플?"
+        android:textSize="36sp"
+        android:layout_margin="16sp"
+        android:fontFamily="@font/jua"
+        android:layout_marginBottom="100sp"
+        ></TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="사진 출저 : PixaBay"
+            android:textSize="24sp"
+            android:layout_margin="16sp"
+            android:fontFamily="@font/jua"
+            ></TextView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="폰트 출저 : \nGoogle Font(Black_Han_Sans,Jua)"
+            android:textSize="24sp"
+            android:layout_marginTop="100sp"
+            android:fontFamily="@font/jua"
+            ></TextView>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+</LinearLayout>
