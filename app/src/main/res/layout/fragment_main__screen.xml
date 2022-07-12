@@ -176,7 +176,7 @@
                     android:layout_width="175sp"
                     android:layout_height="250sp"
                     app:cardCornerRadius="16sp"
-                    android:id="@+id/gogo_community3"
+                    android:id="@+id/gogo_Kalori"
                     android:layout_marginLeft="10sp"
                     android:layout_marginBottom="105sp"
                     android:layout_marginTop="300sp"
@@ -199,7 +199,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="디저트 \n고르러가기!\n(준비중)"
+                            android:text="음식 \n칼로리 확인\n"
                             android:textSize="25sp"
                             android:layout_marginLeft="20sp"
                             android:textStyle="bold"

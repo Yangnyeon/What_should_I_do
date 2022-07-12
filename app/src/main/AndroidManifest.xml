@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.What_should_I_order">
         <activity
+            android:name=".Kalori.Food_Kalori"
+            android:exported="true" />
+        <activity
             android:name=".App_Introduce"
             android:exported="true" />
         <activity

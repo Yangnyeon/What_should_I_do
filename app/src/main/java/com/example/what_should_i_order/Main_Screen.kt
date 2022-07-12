@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import com.example.what_should_i_order.Kalori.Food_Kalori
 
 import com.example.what_should_i_order.Worldcup.Worldcup
 import kotlinx.android.synthetic.main.fragment_main__screen.*
@@ -35,6 +36,8 @@ class Main_Screen : Fragment() {
 
         var gogoApp_Introduce = v.findViewById<CardView>(R.id.gogo_introduce)
 
+        var gogo_Kalori = v.findViewById<CardView>(R.id.gogo_Kalori)
+
         //var Ranking_gogo = v.findViewById<CardView>(R.id.Ranking_gogo)
 
         val range = (0..32)
@@ -54,6 +57,10 @@ class Main_Screen : Fragment() {
 
         gogoApp_Introduce.setOnClickListener {
             startActivity(Intent(requireActivity(), App_Introduce::class.java))
+        }
+
+        gogo_Kalori.setOnClickListener {
+            startActivity(Intent(requireActivity(), Food_Kalori::class.java))
         }
 
 

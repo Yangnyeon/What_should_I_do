@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="1sp"
+    android:background="#000000"
+    android:backgroundTint="#172571">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16sp"
+            android:layout_marginTop="30sp"
+            android:text="음식이름"
+            android:fontFamily="@font/jua"
+            android:textSize="28sp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:id="@+id/Food_holder_name"
+            ></TextView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16sp"
+            android:text="칼로리"
+            android:fontFamily="@font/jua"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="10sp"
+            android:id="@+id/Food_holder_kalori"
+            ></TextView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16sp"
+            android:text="나트륨"
+            android:fontFamily="@font/jua"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="10sp"
+            android:id="@+id/Food_holder_salt"
+            ></TextView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16sp"
+            android:layout_marginBottom="30sp"
+            android:text="단백질"
+           android:fontFamily="@font/jua"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="10sp"
+            android:id="@+id/Food_holder_protein"
+            ></TextView>
+
+    </LinearLayout>
+
+
+
+
+
+
+</androidx.cardview.widget.CardView>
