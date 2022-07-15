@@ -3,9 +3,9 @@ package com.example.what_should_i_order.Kalori
 import com.google.gson.annotations.SerializedName
 
 class Food_Class(
-    val currentCount:Int,
+    var currentCount:Int,
 
-    val data:List<data>,
+    var data:List<data>,
 
     var matchCount: String,
 
@@ -23,7 +23,7 @@ class Food_Class(
     }
 }
 data class data (
-    @SerializedName("음식명") val Food_name:String,
+    @SerializedName("음식명") var Food_name:String,
     @SerializedName("1인분칼로리(kcal)") val  Food_kalori :String,
     @SerializedName("나트륨(g)") val Food_salt :String,
     @SerializedName("단백질(g)") val Food_protein :String,

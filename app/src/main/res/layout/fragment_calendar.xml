@@ -19,22 +19,12 @@
         android:textColor="#FFFFFF"
         android:textSize="40sp"></TextView>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16sp"
-        android:layout_marginTop="100sp"
-        android:fontFamily="@font/jua"
-        android:text="나만의 영어 단어 어플 게시판에서 \n\n 서로의 의견들을공유해보세요!"
-        android:textColor="#FFEB3B"
-        android:textSize="20sp"></TextView>
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="180sp" />
+        android:layout_marginTop="100sp" />
 
     <Button
         android:id="@+id/btn_read"

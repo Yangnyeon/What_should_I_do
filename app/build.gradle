@@ -24,6 +24,10 @@ android {
         //buildConfigFiled "String", "하하",properties['하하']
         buildConfigField "String", "GOOGLE_API_KEY", properties['api_key']
 
+        buildConfigField "String", "GOOGLE_API_KEY1", properties['api_key1']
+
+        buildConfigField "String", "GOOGLE_API_SERVICE2", properties['api_service_key']
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 

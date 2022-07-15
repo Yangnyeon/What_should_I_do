@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/holder_image"
+    android:background="@drawable/kaori_back"
     >
 
 
@@ -83,7 +83,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="300sp"
                 android:layout_marginTop="110sp"
-
+                android:backgroundTint="#00000000"
                 >
 
                 <TextView
@@ -100,6 +100,8 @@
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="#00000000"
+                    android:backgroundTint="#00000000"
                     >
 
                     <ImageView

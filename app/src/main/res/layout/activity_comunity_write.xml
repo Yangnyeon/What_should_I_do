@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".Community.Comunity_Write"
     android:orientation="vertical"
-    android:layout_margin="8sp">
+
+    android:background="@drawable/kaori_back">
 
     <ScrollView
         android:layout_width="match_parent"
