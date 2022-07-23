@@ -1,5 +1,6 @@
 package com.example.what_should_i_order.Community
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +21,7 @@ import com.example.what_should_i_order.Setting.Setting
 import com.example.what_should_i_order.databinding.ActivityCommunityHolderBinding
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import kotlinx.android.synthetic.main.activity_community_holder.*
@@ -35,6 +37,8 @@ class Community_holder : AppCompatActivity() {
     val itemList2 = arrayListOf<Comment_ListLayout>()
 
     var adapter = Comment_ListAdapter(itemList2, this)
+
+    val itemList = arrayListOf<ListLayout>()
 
 
 
@@ -67,10 +71,31 @@ class Community_holder : AppCompatActivity() {
         val like_count = intent.getStringExtra("board_liked")
         val nickname = intent.getStringExtra("board_Nickname")
 
-        board_title.setText(title)
-        board_date.setText(content)
-        board_content.setText(date)
-        board_nickname.text = nickname.toString()
+       // board_title.setText(title)
+       // board_date.setText(content)
+       // board_content.setText(date)
+       // board_nickname.text = nickname.toString()
+        //likes.text = like_count.toString()
+
+        db.collection("Contacts")
+            .document(holder_doc.toString())
+            .get()
+            .addOnSuccessListener { result ->
+                try {
+                    with(result) {
+                        board_title.text = "${getString("name")}"
+                        board_date.text = "${getString("com_date")}"
+                        board_content.text = "${getString("number")}"
+                        board_nickname.text = "${getString("nickname")}"
+                        likes.text = "${getLong("liked")}"
+
+                    }
+                } catch (e: Exception) {
+                    Toast.makeText(this@Community_holder, e.toString() , Toast.LENGTH_SHORT).show()
+                }
+            }
+
+
 
         val go_comment_delelte = Intent(this@Community_holder, Community_holder::class.java)
         go_comment_delelte.putExtra("board_doc", holder_doc)
@@ -185,14 +210,89 @@ class Community_holder : AppCompatActivity() {
             notliked.visibility = View.VISIBLE
             liked.visibility = View.INVISIBLE
 
+            db.collection("Contacts")
+                .document(holder_doc.toString())
+                .update("liked", FieldValue.increment(-1))
+                .addOnSuccessListener { result ->
+
+                    db.collection("Contacts")
+                        .document(holder_doc.toString())
+                        .get()
+                        .addOnSuccessListener { result ->
+                            try {
+                                with(result) {
+
+                                    likes.text = "${getLong("liked")}"
+
+                                }
+                            } catch (e: Exception) {
+                                Toast.makeText(this@Community_holder, e.toString() , Toast.LENGTH_SHORT).show()
+                            }
+                        }
+
+
+                    Toast.makeText(this@Community_holder, "좋아요를 취소했습니다.", Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener { exception ->
+                    Toast.makeText(this@Community_holder, exception.toString(), Toast.LENGTH_SHORT).show()
+                }
 
         }
 
         notliked.setOnClickListener {
             notliked.visibility = View.INVISIBLE
             liked.visibility = View.VISIBLE
+            //여기서 부터 시작
+            db.collection("Contacts")
+                .document(holder_doc.toString())
+                .update("liked", FieldValue.increment(1))
+                .addOnSuccessListener { result ->
 
+                    //
+
+                    db.collection("Contacts")
+                        .document(holder_doc.toString())
+                        .get()
+                        .addOnSuccessListener { result ->
+                            try {
+                                with(result) {
+
+                                    likes.text = "${getLong("liked")}"
+
+                                }
+                            } catch (e: Exception) {
+                                Toast.makeText(this@Community_holder, e.toString() , Toast.LENGTH_SHORT).show()
+                            }
+                        }
+
+
+                    //
+
+
+                    Toast.makeText(this@Community_holder, "좋아요를 눌렀습니다.", Toast.LENGTH_SHORT).show()
+
+                }
+                .addOnFailureListener { exception ->
+                    Toast.makeText(this@Community_holder, exception.toString(), Toast.LENGTH_SHORT).show()
+                }
         }
+
+        /*좋아요 출력
+
+        db.collection("Contacts")
+            .document(holder_doc.toString())
+            .get() // 문서 가져오기
+            .addOnSuccessListener { result ->
+                if (result != null) {
+                    likes.text = result.data.toString()
+                } else {
+                    Log.d(TAG, "No such document")
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.d(TAG, "get failed with ", exception)
+            }
+        */
 
         content_delete.setOnClickListener {
 

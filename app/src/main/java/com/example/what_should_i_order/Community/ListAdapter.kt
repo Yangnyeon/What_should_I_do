@@ -30,6 +30,7 @@ class ListAdapter(val itemList: ArrayList<ListLayout>,val context: Context): Rec
         holder.content.text = itemList[position].number
         holder.community_date.text = itemList[position].com_date
         holder.nickname.text = itemList[position].Nickname
+        holder.like_count.text = itemList[position].liked.toString()
 
 
         val db = FirebaseFirestore.getInstance()
@@ -56,7 +57,7 @@ class ListAdapter(val itemList: ArrayList<ListLayout>,val context: Context): Rec
             var date = itemList[position].number
             var content = itemList[position].com_date
             var doc = itemList[position].doc
-            var liked = itemList[position].liked
+            var liked = itemList[position].liked.toString()
             var nickname = itemList[position].Nickname
             var password = itemList[position].password
 
@@ -80,6 +81,7 @@ class ListAdapter(val itemList: ArrayList<ListLayout>,val context: Context): Rec
         val content : TextView = itemView.findViewById(R.id.list_tv_content)
         val community_date : TextView = itemView.findViewById(R.id.list_tv_date)
         val comment_count = itemView.findViewById<TextView>(R.id.comment_count)
+        val like_count = itemView.findViewById<TextView>(R.id.thumb_count)
         val nickname = itemView.findViewById<TextView>(R.id.list_tv_nickname)
     }
 }

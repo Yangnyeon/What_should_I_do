@@ -73,8 +73,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10sp"
                 android:layout_toLeftOf="@id/thumb_count"
-                android:visibility="invisible"
-                android:src="@drawable/ic_baseline_thumb_up_24"></ImageView>
+                android:src="@drawable/ic_baseline_thumb_up_24"
+                android:visibility="visible"></ImageView>
 
 
             <TextView
@@ -86,8 +86,8 @@
                 android:layout_toLeftOf="@id/chat_image"
                 android:fontFamily="@font/jua"
                 android:text="0"
-                android:visibility="invisible"
-                android:textColor="#000000"></TextView>
+                android:textColor="#000000"
+                android:visibility="visible"></TextView>
 
 
             <ImageView
