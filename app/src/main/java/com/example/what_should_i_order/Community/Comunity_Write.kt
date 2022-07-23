@@ -55,7 +55,8 @@ class Comunity_Write : AppCompatActivity() {
                 "password" to password.toString(),
                 "doc" to doc,
                 "nickname" to nickname.toString(),
-                "liked" to 0.toLong()
+                "liked" to 0.toLong(),
+                "eye_count" to 0.toLong()
             )
             // Contacts 컬렉션에 data를 자동 이름으로 저장
             db.collection("Contacts")

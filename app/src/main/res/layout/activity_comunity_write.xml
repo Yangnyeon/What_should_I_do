@@ -65,6 +65,7 @@
                     android:layout_gravity="center"
                     android:textSize="16sp"
                     android:inputType="text"
+                    android:maxLength="6"
                     ></EditText>
 
 

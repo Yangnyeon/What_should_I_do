@@ -110,7 +110,7 @@ class Community_holder : AppCompatActivity() {
                         board_content.text = "${getString("number")}"
                         board_nickname.text = "${getString("nickname")}"
                         likes.text = "${getLong("liked")}"
-
+                        eye_holder_count.text = "조회수 : ${getLong("eye_count")}"
                     }
                 } catch (e: Exception) {
                     Toast.makeText(this@Community_holder, e.toString() , Toast.LENGTH_SHORT).show()

@@ -7,10 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.what_should_i_order.R
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
+import kotlinx.android.synthetic.main.activity_community_holder.*
 
 class ListAdapter(val itemList: ArrayList<ListLayout>,val context: Context): RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
@@ -31,6 +34,7 @@ class ListAdapter(val itemList: ArrayList<ListLayout>,val context: Context): Rec
         holder.community_date.text = itemList[position].com_date
         holder.nickname.text = itemList[position].Nickname
         holder.like_count.text = itemList[position].liked.toString()
+        holder.eye_count.text = itemList[position].eye.toString()
 
 
         val db = FirebaseFirestore.getInstance()
@@ -71,6 +75,16 @@ class ListAdapter(val itemList: ArrayList<ListLayout>,val context: Context): Rec
             go_board.putExtra("board_Nickname", nickname)
             go_board.putExtra("board_password", password)
 
+
+
+            db.collection("Contacts")
+                .document(doc)
+                .update("eye_count", FieldValue.increment(+1))
+                .addOnSuccessListener { result ->
+                }
+                .addOnFailureListener { exception ->
+                }
+
             context.startActivity(go_board)
         }
 
@@ -83,5 +97,6 @@ class ListAdapter(val itemList: ArrayList<ListLayout>,val context: Context): Rec
         val comment_count = itemView.findViewById<TextView>(R.id.comment_count)
         val like_count = itemView.findViewById<TextView>(R.id.thumb_count)
         val nickname = itemView.findViewById<TextView>(R.id.list_tv_nickname)
+        val eye_count = itemView.findViewById<TextView>(R.id.eye_count)
     }
 }
