@@ -43,9 +43,16 @@ class Community_holder : AppCompatActivity() {
 
 
 
+
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_community_holder)
+
+
+
 
         binding = ActivityCommunityHolderBinding.inflate(layoutInflater)
         val view = binding.root
@@ -71,11 +78,26 @@ class Community_holder : AppCompatActivity() {
         val like_count = intent.getStringExtra("board_liked")
         val nickname = intent.getStringExtra("board_Nickname")
 
-       // board_title.setText(title)
-       // board_date.setText(content)
-       // board_content.setText(date)
-       // board_nickname.text = nickname.toString()
+        // board_title.setText(title)
+        // board_date.setText(content)
+        // board_content.setText(date)
+        // board_nickname.text = nickname.toString()
         //likes.text = like_count.toString()
+
+        var settings: SharedPreferences = getSharedPreferences("like_tmp", MODE_PRIVATE)
+
+        var editor: SharedPreferences.Editor = settings.edit()
+
+        if(settings.getBoolean(holder_doc.toString(), false))
+        {
+            notliked.visibility = View.INVISIBLE
+            liked.visibility = View.VISIBLE
+        }
+        else
+        {
+            notliked.visibility = View.VISIBLE
+            liked.visibility = View.INVISIBLE
+        }
 
         db.collection("Contacts")
             .document(holder_doc.toString())
@@ -99,6 +121,7 @@ class Community_holder : AppCompatActivity() {
 
         val go_comment_delelte = Intent(this@Community_holder, Community_holder::class.java)
         go_comment_delelte.putExtra("board_doc", holder_doc)
+
 
 
 
@@ -206,6 +229,8 @@ class Community_holder : AppCompatActivity() {
 
         }
 
+
+
         liked.setOnClickListener {
             notliked.visibility = View.VISIBLE
             liked.visibility = View.INVISIBLE
@@ -223,6 +248,8 @@ class Community_holder : AppCompatActivity() {
                                 with(result) {
 
                                     likes.text = "${getLong("liked")}"
+                                    editor.remove(holder_doc.toString())
+                                    editor.commit()
 
                                 }
                             } catch (e: Exception) {
@@ -250,6 +277,7 @@ class Community_holder : AppCompatActivity() {
 
                     //
 
+
                     db.collection("Contacts")
                         .document(holder_doc.toString())
                         .get()
@@ -258,6 +286,8 @@ class Community_holder : AppCompatActivity() {
                                 with(result) {
 
                                     likes.text = "${getLong("liked")}"
+                                    editor.putBoolean(holder_doc.toString(), true)
+                                    editor.commit()
 
                                 }
                             } catch (e: Exception) {
@@ -384,6 +414,7 @@ class Community_holder : AppCompatActivity() {
                 Log.w("TAG", "Error getting documents: $exception")
             }
     }
+
 
 
 
