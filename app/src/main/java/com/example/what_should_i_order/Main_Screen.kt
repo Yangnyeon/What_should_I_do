@@ -9,6 +9,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import com.example.what_should_i_order.Kalori.Food_Kalori
+import com.example.what_should_i_order.Storage.Storage_Main_Screen
+import com.example.what_should_i_order.Storage.Storage_Write
 
 import com.example.what_should_i_order.Worldcup.Worldcup
 import kotlinx.android.synthetic.main.fragment_main__screen.*
@@ -38,14 +40,18 @@ class Main_Screen : Fragment() {
 
         var gogo_Kalori = v.findViewById<CardView>(R.id.gogo_Kalori)
 
+        var gogo_storage = v.findViewById<TextView>(R.id.storage_gogo)
+
         //var Ranking_gogo = v.findViewById<CardView>(R.id.Ranking_gogo)
 
         val range = (0..32)
 
 
         Today_food.text = Today_food_list[range.random()]
-        
 
+        gogo_storage.setOnClickListener {
+            startActivity(Intent(requireActivity(), Storage_Main_Screen::class.java))
+        }
 
         World_gogo.setOnClickListener {
             startActivity(Intent(requireActivity(), Worldcup::class.java))

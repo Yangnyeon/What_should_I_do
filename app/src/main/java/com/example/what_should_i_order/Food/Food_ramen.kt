@@ -33,6 +33,8 @@ class Food_ramen : AppCompatActivity() {
         fetchData()
     }
 
+
+
     private fun fetchData() {
         FirebaseFirestore.getInstance().collection("Ramen")
             .get()
@@ -41,7 +43,6 @@ class Food_ramen : AppCompatActivity() {
                 for(document in result) {
                     val user = result.toObjects(Food_Model::class.java)
                     binding.RamenRecyclerView.adapter = Food_Adapter(this,user)
-
                 }
             }
             .addOnFailureListener {

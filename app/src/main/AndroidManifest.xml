@@ -2,13 +2,27 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.what_should_i_order">
 
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/order_icon"
         android:label="배달 머 시켜 먹을까?!"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.What_should_I_order">
+        <activity
+            android:name=".Storage.Storage_Main_Screen"
+            android:exported="true" />
+        <activity
+            android:name=".Storage.Activity_photo"
+            android:exported="true" />
+        <activity
+            android:name=".Storage.Storage_Write"
+            android:exported="true" />
         <activity
             android:name=".Searchview"
             android:exported="true" />

@@ -14,10 +14,13 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.setPadding
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.example.what_should_i_order.Community.Comment.Comment_ListAdapter
 import com.example.what_should_i_order.Community.Comment.Comment_ListLayout
+import com.example.what_should_i_order.Kalori.data
 import com.example.what_should_i_order.R
 import com.example.what_should_i_order.Setting.Setting
+import com.example.what_should_i_order.Storage.Photo
 import com.example.what_should_i_order.databinding.ActivityCommunityHolderBinding
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
@@ -25,6 +28,7 @@ import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import kotlinx.android.synthetic.main.activity_community_holder.*
+import kotlinx.android.synthetic.main.activity_photo.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -39,10 +43,6 @@ class Community_holder : AppCompatActivity() {
     var adapter = Comment_ListAdapter(itemList2, this)
 
     val itemList = arrayListOf<ListLayout>()
-
-
-
-
 
 
 
@@ -111,11 +111,27 @@ class Community_holder : AppCompatActivity() {
                         board_nickname.text = "${getString("nickname")}"
                         likes.text = "${getLong("liked")}"
                         eye_holder_count.text = "조회수 : ${getLong("eye_count")}"
+                        Glide.with(this@Community_holder)
+                            .load("${getString("imageUrl")}")
+                            .into(real_holder_image)
                     }
                 } catch (e: Exception) {
                     Toast.makeText(this@Community_holder, e.toString() , Toast.LENGTH_SHORT).show()
                 }
             }
+
+        /*
+        if (holder_doc.toString() != null) {
+            db.collection("Contacts").document((holder_doc.toString()).get().addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    var photo = task.result?.toObject(ListLayout::class.java)
+                    Glide.with(this).load(photo?.imageUrl).into(holder_image)
+                }
+            }
+        }
+
+         */
+
 
 
 
@@ -380,6 +396,7 @@ class Community_holder : AppCompatActivity() {
 
 
         }
+
 
 
 
